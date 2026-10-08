@@ -1,0 +1,81 @@
+{
+  "platform": {
+    "version": "0.9.0"
+  },
+  "entries": [
+    {
+      "name": "Osysharp.Blocks",
+      "kind": "package",
+      "version": "1.1.0",
+      "hash": "sha256:2ca2c536187612fb43d848192a0cce47328473f1176ee55129b41132262aac02",
+      "minPlatform": "0.9.0",
+      "shadow": "app-forkable",
+      "source": "workspace:Platform.Core/Dsl/OsySharp/Baseline/Capabilities/Blocks"
+    },
+    {
+      "name": "Osysharp.Pages",
+      "kind": "package",
+      "version": "0.1.1",
+      "hash": "sha256:62ad163249c6c58e9a816ced3b98d42938780934fa5adef63e006489925f4510",
+      "minPlatform": "0.9.0",
+      "shadow": "app-forkable",
+      "source": "workspace:kits/pages",
+      "constraint": "0"
+    },
+    {
+      "name": "Osysharp.Ui",
+      "kind": "package",
+      "version": "2.17.1",
+      "hash": "sha256:17d6d844ed71d4d614d43a6993723da70b2d39241c31e9f9fb58250a5183263c",
+      "minPlatform": "0.9.0",
+      "shadow": "app-forkable",
+      "source": "workspace:Platform.Core/Dsl/OsySharp/Baseline/Capabilities/Ui"
+    },
+    {
+      "name": "Osysharp.Storage",
+      "kind": "package",
+      "version": "1.2.0",
+      "hash": "sha256:0e45268f33acd5a0fe1dae3e886ab1d828824fc628f9a34efa81af746b0f57d0",
+      "minPlatform": "0.9.0",
+      "shadow": "app-forkable",
+      "source": "workspace:Platform.Core/Dsl/OsySharp/Baseline/Capabilities/Storage"
+    },
+    {
+      "name": "Osysharp.Markdown",
+      "kind": "package",
+      "version": "1.0.0",
+      "hash": "sha256:1d3c26de068b57c2124ae395a3c5891cb99cc75f6304028539ccaf458080d225",
+      "minPlatform": "0.9.0",
+      "shadow": "app-forkable",
+      "source": "workspace:Platform.Core/Dsl/OsySharp/Baseline/Capabilities/Markdown"
+    },
+    {
+      "name": "Osysharp.MarkdownEditor",
+      "kind": "package",
+      "version": "1.0.1",
+      "hash": "sha256:005db3daf5244c92885318ac97a58b08048e65c815390aa61fc9e36fc8511e66",
+      "minPlatform": "0.9.0",
+      "shadow": "app-forkable",
+      "source": "workspace:kits/markdown",
+      "constraint": "1",
+      "contractVersion": "1.1"
+    },
+    {
+      "name": "Osysharp.Site.Looks",
+      "kind": "package",
+      "version": "0.1.1",
+      "hash": "sha256:cc0f9668459d22f9724d7962b649bdae81f874e963f29baf1fae53f8fc76ef48",
+      "minPlatform": "0.9.0",
+      "shadow": "app-forkable",
+      "source": "workspace:kits/site-looks",
+      "constraint": "0"
+    }
+  ],
+  "bridges": {
+    "searched": [
+      "workspace",
+      "platform",
+      "github"
+    ]
+  }
+}

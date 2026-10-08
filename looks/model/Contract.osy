@@ -1,0 +1,117 @@
+// The general site contract (D-SITEFRAME1 part 2). Each `abstract component` is a BLOCK TYPE: its parameters are the
+// fields staff fill in at the page desk, and each look draws it in its own design —
+//
+//     component AtelierHero(string title, Markdown words = "", Picture photo = "", string button = "Shop now",
+//                           PageLink link = "/", Color ground = Colors.Surface) : Hero { render { … } }
+//
+// — with exactly these parameters, checked like a class against an interface. A design that paints a `ground` sets
+// the words on it in `Colors.On(ground, <its ink on the default ground>)` — the ink the theme pairs with the colour staff
+// chose (`Violet` → `OnViolet`), so a dark ground never gets dark words. What staff arrange is stored as the TYPE
+// and its values, so a site that switches look keeps every word and photograph and draws them in the new design.
+
+namespace Osysharp.Site.Looks;
+
+using Osysharp.Ui;
+using Osysharp.Blocks;
+
+/// Which side of a block its photograph is on.
+public enum PhotoSide {
+  [Label("Photo on the left")] Left,
+  [Label("Photo on the right")] Right,
+}
+
+// ── the page ─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+/// A photograph with a headline set over it, a sentence and one thing to do — the top of a page.
+[Block("Hero")]
+public abstract component Hero(
+    [Label("Headline"), MaxLength(80), Sample("New in this week")] string title,
+    [Label("Words under it"), MaxLength(400), Hint("A sentence or two — what is new, what to do.")] Markdown words = "",
+    [Label("Photograph")] Picture photo = "",
+    [Label("A second photograph"), Hint("Beside the first, where the look has room for two.")] Picture second = "",
+    [Label("Button"), MaxLength(30)] string button = "Shop now",
+    [Label("The button goes to"), Hint("A page of the site, like /shop, or an outside address.")] PageLink link = "/",
+    [Label("Ground")] Color ground = Colors.Surface);
+
+/// A photograph beside a heading and a few paragraphs — a story, a way of working, a new arrival.
+[Block("Picture with words")]
+public abstract component PictureWithWords(
+    [Label("Photograph")] Picture photo,
+    [Label("Heading"), MaxLength(80), Sample("How it is made")] string title,
+    [Label("Words"), MaxLength(1200)] Markdown words = "",
+    [Label("Photo on")] PhotoSide side = PhotoSide.Left,
+    [Label("Ground")] Color ground = Colors.Bg);
+
+/// Something a customer said, large, with who said it.
+[Block("Quote")]
+public abstract component Quote(
+    [Label("What they said"), MaxLength(300), Sample("Exactly as good as the last one.")] string quote,
+    [Label("Who said it"), MaxLength(80), Sample("A customer")] string who = "",
+    [Label("Ground")] Color ground = Colors.Surface);
+
+/// The newsletter's sign-up, with the words the reader agrees to beside the button — exactly what is kept.
+[Block("Newsletter sign-up")]
+public abstract component SignUp(
+    [Label("Heading"), MaxLength(80)] string title = "The newsletter",
+    [Label("Words"), MaxLength(400)] string words = "What is new, once in a while. Every letter has a way out at the foot.",
+    [Label("Button"), MaxLength(30)] string button = "Sign up");
+
+/// A strip across the page — a sale, opening hours over the holidays, a cut-off. Give it dates on the desk and it shows
+/// only between them.
+[Block("Banner")]
+public abstract component Banner(
+    [Label("What it says"), MaxLength(140), Sample("Free delivery this week")] string words,
+    [Label("Link"), MaxLength(40)] string more = "",
+    [Label("The link goes to")] PageLink link = "/",
+    [Label("Ground")] Color ground = Colors.Primary);
+
+/// Up to four photographs side by side, with a heading — a room, a season, a finished piece of work.
+[Block("Gallery")]
+public abstract component PhotoGallery(
+    [Label("Heading"), MaxLength(80), Sample("This season")] string title = "",
+    [Label("First photograph")] Picture first = "",
+    [Label("Second photograph")] Picture second = "",
+    [Label("Third photograph")] Picture third = "",
+    [Label("Fourth photograph")] Picture fourth = "");
+
+// ── around every page: the strip across the top and the footer ──────────────────────────────────────────────────────
+
+/// One line across the top of every page — free delivery, a cut-off before the holidays, a new collection. Give it
+/// dates on the desk and it comes and goes by itself.
+[Block("Announcement")]
+public abstract component Announcement(
+    [Label("What it says"), MaxLength(160), Sample("Free delivery on orders over 500 kr")] string words,
+    [Label("Link"), MaxLength(40), Hint("Leave it empty for no link.")] string more = "",
+    [Label("The link goes to")] PageLink link = "/");
+
+/// A few words about the place, under its name in the footer.
+[Block("About us")]
+public abstract component FooterWords(
+    [Label("Words"), MaxLength(400), Sample("Coffee roasted every Tuesday, and wine we have tasted before we sell it.")] string words);
+
+/// One link in the footer — a page of the site, or an address outside it, marked as one.
+[Block("Footer link")]
+public abstract component FooterLink(
+    [Label("Words"), MaxLength(60), Sample("Visit the roastery")] string words,
+    [Label("Goes to")] PageLink link = "/");
+
+/// When the place is open, under a heading.
+[Block("Opening hours")]
+public abstract component OpeningHours(
+    [Label("Heading"), MaxLength(60)] string heading = "Opening hours",
+    [Label("Hours"), MaxLength(400), Hint("One line per day or days.")] Markdown hours = "Monday to Friday 8–18  \nSaturday 10–16  \nSunday closed");
+
+/// Where the place is — a street, a town, and a map if there is one.
+[Block("Address")]
+public abstract component Address(
+    [Label("Heading"), MaxLength(60)] string heading = "Find us",
+    [Label("Street"), MaxLength(120), Sample("Hornsgatan 12")] string street = "",
+    [Label("Postcode and town"), MaxLength(120), Sample("118 20 Stockholm")] string town = "",
+    [Label("A map"), Hint("A map's address, https://…; leave it empty for none.")] PageLink map = "");
+
+/// The newsletter's sign-up, small enough for the footer — with the words the reader agrees to, exactly what is kept.
+[Block("Newsletter sign-up (footer)")]
+public abstract component FooterSignUp(
+    [Label("Heading"), MaxLength(60)] string heading = "The newsletter",
+    [Label("Words"), MaxLength(200)] string words = "What is new, once in a while.",
+    [Label("Button"), MaxLength(30)] string button = "Sign up");

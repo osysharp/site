@@ -1,0 +1,15 @@
+// Osysharp.Site.Looks — the GENERAL site contract: the block types any consumer-facing site places (a hero, a picture
+// with words, a quote, opening hours, an address, a sign-up, a gallery, the strip across the top, the footer's words
+// and links). The SHAPE only — what each holds, not how it looks. A LOOK implements them in its own design
+// (`component AtelierHero(…) : Hero { … }`), so staff arrange a Hero once and it is drawn by whichever look the site
+// wears. A category contract sits on top of it — the shop's (`Osysharp.Shop.Looks`: a row of products, the shelves as
+// tiles, the frame and pages of a store) — so one design can serve a café, a restaurant and a barber alike.
+package Osysharp.Site.Looks {
+  version     "0.1.1";
+  minPlatform "0.9.0";
+  summary     "the general site contract for looks — hero, picture with words, quote, opening hours, address, sign-up, gallery, announcement, footer — as block TYPES each look draws in its own design.";
+  model "model/**/*.osy";
+  use Osysharp.Ui;
+  use Osysharp.Blocks;
+  tests "tests";
+}

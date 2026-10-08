@@ -1,0 +1,41 @@
+// NIGHT — near-black, a pale green, everything smaller and closer. Draws the bouquet only: a saying and a pressed flower
+// have no design here, which the desk says before a version switches to it.
+
+namespace Florist.Looks.Night;
+
+using Osysharp.Blocks;
+
+/// Near-black paper and a pale green.
+look Night {
+  Label = "Night";
+  Theme = NightTheme;
+}
+
+theme NightTheme {
+  Colors {
+    Bg = "#101014";
+    OnBg = "#EDEDF2";
+    Surface = "#1C1C22";
+    OnSurface = "#EDEDF2";
+    Leaf = "#9FD3A8";
+  }
+  FontSize { Hero = "32px"; }
+}
+
+component NightFront() : FrontPage {
+  render {
+    Stack(gap: 0, bg: Colors.Bg, color: Colors.OnBg, minH: "100vh") {
+      Region("front", allow: [Bouquet]) {
+        Bouquet(title: "Evening bouquets");
+      }
+    }
+  }
+}
+
+component NightBouquet(string title, Markdown words = "", Picture photo = "") : Bouquet {
+  render {
+    Box(px: 6, py: 6, bg: Colors.Surface, label: "Night bouquet") {
+      Text("Night · " + title, fontSize: FontSize.Hero, color: Colors.Leaf);
+    }
+  }
+}

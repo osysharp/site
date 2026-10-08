@@ -1,0 +1,31 @@
+// FROST — a pale blue paper and an ink-blue, and NO front page of its own: it draws only the bouquet. A look that skips
+// a part with no default design falls back to the one the site's default look gives it (Meadow's front), drawn in
+// Frost's own colours — D-LOOKSDOC1, where a skipped part used to draw nothing at all.
+
+namespace Florist.Looks.Frost;
+
+using Osysharp.Blocks;
+
+/// Pale blue paper and an ink-blue.
+look Frost {
+  Label = "Frost";
+  Theme = FrostTheme;
+}
+
+theme FrostTheme {
+  Colors {
+    Bg = "#EEF4FA";
+    OnBg = "#12263A";
+    Surface = "#DCE8F4";
+    OnSurface = "#12263A";
+    Leaf = "#1F4E79";
+  }
+}
+
+component FrostBouquet(string title, Markdown words = "", Picture photo = "") : Bouquet {
+  render {
+    Box(px: 8, py: 10, bg: Colors.Surface, label: "Frost bouquet") {
+      Text("Frost · " + title, fontSize: FontSize.Hero, color: Colors.Leaf);
+    }
+  }
+}

@@ -1,0 +1,176 @@
+// sv (Svenska): the words of Osysharp.Site.Looks, translated.
+// Written and kept in step with the source by `osy translate`: a new text arrives as `=> null`, a text
+// whose source changed keeps its old translation in a `was` clause. The words are yours to edit.
+// Source language: en.
+
+translations sv {
+  // ── Osysharp.Site.Looks.PhotoSide ──
+  /// Osysharp.Site.Looks.PhotoSide · a label (a field, a list item, a menu entry) · at most ~24 characters
+  /// shown through Osysharp.Site.Looks.PhotoSide.Left
+  /// beside: "Photo on the right"
+  label "Photo on the left" => "Bilden till vänster";
+  /// Osysharp.Site.Looks.PhotoSide · a label (a field, a list item, a menu entry) · at most ~26 characters
+  /// shown through Osysharp.Site.Looks.PhotoSide.Right
+  /// beside: "Photo on the left"
+  label "Photo on the right" => "Bilden till höger";
+
+  // ── __BlockSpec_Address ──
+  /// __BlockSpec_Address · text on the page
+  text "A map" => "En karta";
+  /// __BlockSpec_Address · text on the page
+  text "A map's address, https://…; leave it empty for none." => "En kartas adress, https://…; lämna tomt för ingen.";
+  /// __BlockSpec_Address · text on the page
+  text "Address" => "Adress";
+  /// __BlockSpec_Address · text on the page
+  text "Find us" => "Hitta hit";
+  /// __BlockSpec_Address · text on the page
+  text "Postcode and town" => "Postnummer och ort";
+  /// __BlockSpec_Address · text on the page
+  text "Street" => "Gatuadress";
+  /// __BlockSpec_Address · text on the page
+  text "Where the place is — a street, a town, and a map if there is one." => "Var stället ligger – en gata, en ort och en karta om det finns en.";
+
+  // ── __BlockSpec_Announcement ──
+  /// __BlockSpec_Announcement · text on the page
+  text "Announcement" => "Meddelande";
+  /// __BlockSpec_Announcement · text on the page
+  text "Leave it empty for no link." => "Lämna tomt för ingen länk.";
+  /// __BlockSpec_Announcement · text on the page
+  text "One line across the top of every page — free delivery, a cut-off before the holidays, a new collection." => "En rad överst på varje sida – fri frakt, sista beställningsdag före helgerna, en ny kollektion.";
+
+  // ── __BlockSpec_Banner ──
+  /// __BlockSpec_Banner · text on the page
+  text "A strip across the page — a sale, opening hours over the holidays, a cut-off." => "En remsa över sidan – en rea, öppettider över helgerna, sista dag för något.";
+  /// __BlockSpec_Banner · text on the page
+  text "Banner" => "Banderoll";
+  /// __BlockSpec_Banner · text on the page
+  /// also in __BlockSpec_Announcement
+  text "Link" => "Länk";
+  /// __BlockSpec_Banner · text on the page
+  /// also in __BlockSpec_Announcement
+  text "The link goes to" => "Länken leder till";
+  /// __BlockSpec_Banner · text on the page
+  /// also in __BlockSpec_Announcement
+  text "What it says" => "Vad den säger";
+
+  // ── __BlockSpec_FooterLink ──
+  /// __BlockSpec_FooterLink · text on the page
+  text "Footer link" => "Länk i sidfoten";
+  /// __BlockSpec_FooterLink · text on the page
+  text "One link in the footer — a page of the site, or an address outside it, marked as one." => "En länk i sidfoten – en sida på sajten, eller en adress utanför den, märkt som en sådan.";
+
+  // ── __BlockSpec_FooterSignUp ──
+  /// __BlockSpec_FooterSignUp · text on the page
+  text "Newsletter sign-up (footer)" => "Anmälan till nyhetsbrevet (sidfoten)";
+  /// __BlockSpec_FooterSignUp · text on the page
+  text "The newsletter's sign-up, small enough for the footer — with the words the reader agrees to, exactly what is kept." => "Anmälan till nyhetsbrevet, liten nog för sidfoten – med orden läsaren godkänner, precis det som sparas.";
+  /// __BlockSpec_FooterSignUp · text on the page
+  text "What is new, once in a while." => "Vad som är nytt, då och då.";
+
+  // ── __BlockSpec_FooterWords ──
+  /// __BlockSpec_FooterWords · text on the page
+  text "A few words about the place, under its name in the footer." => "Några ord om stället, under dess namn i sidfoten.";
+  /// __BlockSpec_FooterWords · text on the page
+  text "About us" => "Om oss";
+
+  // ── __BlockSpec_Hero ──
+  /// __BlockSpec_Hero · text on the page
+  text "A page of the site, like /shop, or an outside address." => "En sida på sajten, som /shop, eller en adress utanför.";
+  /// __BlockSpec_Hero · text on the page
+  text "A photograph with a headline set over it, a sentence and one thing to do — the top of a page." => "Ett fotografi med en rubrik över, en mening och en sak att göra – överst på en sida.";
+  /// __BlockSpec_Hero · text on the page
+  text "A second photograph" => "Ett andra fotografi";
+  /// __BlockSpec_Hero · text on the page
+  text "A sentence or two — what is new, what to do." => "En mening eller två – vad som är nytt, vad man kan göra.";
+  /// __BlockSpec_Hero · text on the page
+  text "Beside the first, where the look has room for two." => "Bredvid det första, där utseendet har plats för två.";
+  /// __BlockSpec_Hero · text on the page
+  /// also in __BlockSpec_SignUp
+  /// also in __BlockSpec_FooterSignUp
+  text "Button" => "Knapp";
+  /// __BlockSpec_Hero · text on the page
+  /// also in __BlockSpec_PictureWithWords
+  /// also in __BlockSpec_Quote
+  /// also in __BlockSpec_Banner
+  text "Ground" => "Bakgrund";
+  /// __BlockSpec_Hero · text on the page
+  text "Headline" => "Rubrik";
+  /// __BlockSpec_Hero · text on the page
+  text "Hero" => "Toppbild";
+  /// __BlockSpec_Hero · text on the page
+  /// also in __BlockSpec_PictureWithWords
+  text "Photograph" => "Fotografi";
+  /// __BlockSpec_Hero · text on the page
+  text "Shop now" => "Handla nu";
+  /// __BlockSpec_Hero · text on the page
+  text "The button goes to" => "Knappen leder till";
+  /// __BlockSpec_Hero · text on the page
+  text "Words under it" => "Text under";
+
+  // ── __BlockSpec_OpeningHours ──
+  /// __BlockSpec_OpeningHours · text on the page
+  text "Hours" => "Tider";
+  /// __BlockSpec_OpeningHours · text on the page
+  text "Monday to Friday 8–18  \nSaturday 10–16  \nSunday closed" => "Måndag till fredag 8–18  \nLördag 10–16  \nSöndag stängt";
+  /// __BlockSpec_OpeningHours · text on the page
+  text "One line per day or days." => "En rad per dag eller dagar.";
+  /// __BlockSpec_OpeningHours · text on the page
+  text "Opening hours" => "Öppettider";
+  /// __BlockSpec_OpeningHours · text on the page
+  text "When the place is open, under a heading." => "När stället har öppet, under en rubrik.";
+
+  // ── __BlockSpec_PhotoGallery ──
+  /// __BlockSpec_PhotoGallery · text on the page
+  text "First photograph" => "Första fotografiet";
+  /// __BlockSpec_PhotoGallery · text on the page
+  text "Fourth photograph" => "Fjärde fotografiet";
+  /// __BlockSpec_PhotoGallery · text on the page
+  text "Gallery" => "Galleri";
+  /// __BlockSpec_PhotoGallery · text on the page
+  text "Second photograph" => "Andra fotografiet";
+  /// __BlockSpec_PhotoGallery · text on the page
+  text "Third photograph" => "Tredje fotografiet";
+  /// __BlockSpec_PhotoGallery · text on the page
+  text "Up to four photographs side by side, with a heading — a room, a season, a finished piece of work." => "Upp till fyra fotografier bredvid varandra, med en rubrik – ett rum, en säsong, ett färdigt arbete.";
+
+  // ── __BlockSpec_PictureWithWords ──
+  /// __BlockSpec_PictureWithWords · text on the page
+  text "A photograph beside a heading and a few paragraphs — a story, a way of working, a new arrival." => "Ett fotografi bredvid en rubrik och några stycken – en berättelse, ett arbetssätt, en nyhet.";
+  /// __BlockSpec_PictureWithWords · text on the page
+  /// also in __BlockSpec_SignUp
+  /// also in __BlockSpec_PhotoGallery
+  /// also in __BlockSpec_OpeningHours
+  text "Heading" => "Rubrik";
+  /// __BlockSpec_PictureWithWords · text on the page
+  text "Photo on" => "Bilden till";
+  /// __BlockSpec_PictureWithWords · text on the page
+  text "Photo on the left" => "Bilden till vänster";
+  /// __BlockSpec_PictureWithWords · text on the page
+  text "Photo on the right" => "Bilden till höger";
+  /// __BlockSpec_PictureWithWords · text on the page
+  text "Picture with words" => "Bild med text";
+
+  // ── __BlockSpec_Quote ──
+  /// __BlockSpec_Quote · text on the page
+  text "Quote" => "Citat";
+  /// __BlockSpec_Quote · text on the page
+  text "Something a customer said, large, with who said it." => "Något en kund har sagt, stort, med vem som sa det.";
+  /// __BlockSpec_Quote · text on the page
+  text "What they said" => "Vad de sa";
+  /// __BlockSpec_Quote · text on the page
+  text "Who said it" => "Vem som sa det";
+
+  // ── __BlockSpec_SignUp ──
+  /// __BlockSpec_SignUp · text on the page
+  text "Newsletter sign-up" => "Anmälan till nyhetsbrevet";
+  /// __BlockSpec_SignUp · text on the page
+  /// also in __BlockSpec_FooterSignUp
+  text "Sign up" => "Anmäl mig";
+  /// __BlockSpec_SignUp · text on the page
+  /// also in __BlockSpec_FooterSignUp
+  text "The newsletter" => "Nyhetsbrevet";
+  /// __BlockSpec_SignUp · text on the page
+  text "The newsletter's sign-up, with the words the reader agrees to beside the button — exactly what is kept." => "Anmälan till nyhetsbrevet, med orden läsaren godkänner bredvid knappen – exakt det som sparas.";
+  /// __BlockSpec_SignUp · text on the page
+  text "What is new, once in a while. Every letter has a way out at the foot." => "Vad som är nytt, då och då. Varje brev har en väg ut längst ner.";
+}

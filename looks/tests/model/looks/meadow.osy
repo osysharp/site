@@ -1,0 +1,59 @@
+// MEADOW — pale paper, a green that grows, a serif set large. Draws the bouquet and the saying, and has a block of its own:
+// a pressed flower.
+
+namespace Florist.Looks.Meadow;
+
+using Osysharp.Blocks;
+
+/// Pale paper and a green that grows.
+look Meadow {
+  Label = "Meadow";
+  Theme = MeadowTheme;
+}
+
+theme MeadowTheme {
+  Colors {
+    Bg = "#FFFDF5";
+    OnBg = "#1F2A1F";
+    Surface = "#EEF3E6";
+    OnSurface = "#1F2A1F";
+    Leaf = "#3A7D44";
+  }
+  FontSize { Hero = "56px"; }
+}
+
+component MeadowFront() : FrontPage {
+  render {
+    Stack(gap: 0, bg: Colors.Bg, color: Colors.OnBg) {
+      Region("front", allow: [Bouquet, Saying, Pressed]) {
+        Bouquet(title: "Flowers cut this morning", words: "Tulips, ranunculus and the first narcissi.");
+        Saying(quote: "The peonies lasted two weeks.", who: "A customer");
+        Pressed(words: "A daisy from June");
+      }
+    }
+  }
+}
+
+component MeadowBouquet(string title, Markdown words = "", Picture photo = "") : Bouquet {
+  render {
+    Stack(gap: 3, px: 8, py: 12, bg: Colors.Surface, label: "Meadow bouquet") {
+      Text("Meadow · " + title, fontSize: FontSize.Hero, color: Colors.Leaf);
+      if (words != "") { Markdown(words); }
+    }
+  }
+}
+
+component MeadowSaying(string quote, string who = "") : Saying {
+  render {
+    Stack(gap: 1, px: 8, py: 8, label: "Meadow saying") {
+      Text("“" + quote + "”", fontSize: FontSize.Title, fontStyle: FontStyle.Italic);
+      if (who != "") { Text("— " + who, color: Colors.Leaf); }
+    }
+  }
+}
+
+/// A flower pressed between two pages — Meadow's own.
+[Block("Pressed flower")]
+component Pressed([Label("Words"), MaxLength(80)] string words = "A daisy from June") {
+  render { Text("✿ " + words, px: 8, py: 4, color: Colors.Leaf); }
+}

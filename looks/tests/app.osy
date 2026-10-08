@@ -1,0 +1,11 @@
+// The producer's test project for Osysharp.Site.Looks — a florist with three looks of its own (Meadow, Night, and Frost — which has no front page of its own), a front
+// page whose hero, quote and pressed flower staff arrange, and the page desk to switch a version's look at.
+app SiteLooksKitTests {
+  model "model/**/*.osy";
+  tests "**/*.test.osy";
+  use Osysharp.Site.Looks@0;
+  use Osysharp.Pages@0;
+  use Osysharp.Blocks;
+  use Osysharp.Storage;
+  use Osysharp.Ui;
+}
