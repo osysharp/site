@@ -69,21 +69,21 @@ component Site() {
   }
 }
 
-[Page("/")]
+[Route("/")]
 [Layout(Site)]
 [AllowAnonymous]
 component Front() {
   render { FrontPage(); }
 }
 
-[Page("/staff/pages")]
+[Route("/staff/pages")]
 [Layout(Site)]
 [Authorize(IsStaff)]
 component StaffPages() {
   render { Box(p: 6) { PagesDesk(); } }
 }
 
-[Page("/sign-in")]
+[Route("/sign-in")]
 [Layout(Site)]
 [AllowAnonymous]
 component SignInPage() {
