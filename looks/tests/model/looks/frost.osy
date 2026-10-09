@@ -1,6 +1,6 @@
 // FROST — a pale blue paper and an ink-blue, and NO front page of its own: it draws only the bouquet. A look that skips
 // a part with no default design falls back to the one the site's default look gives it (Meadow's front), drawn in
-// Frost's own colours — D-LOOKSDOC1, where a skipped part used to draw nothing at all.
+// Frost's own colours.
 
 namespace Florist.Looks.Frost;
 

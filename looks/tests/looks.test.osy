@@ -130,8 +130,8 @@ void the_general_contract_is_in_the_catalog_as_block_types() {
   }
 }
 
-/// D-LOOKSDOC1 (b) — Frost draws the bouquet and NO front page. A part with no default design used to draw nothing in
-/// a look that skips it, silently; it now falls back to the design the site's default look gives it — Meadow's front —
+/// Frost draws the bouquet and NO front page. A part with no default design in a look that skips it falls back to
+/// the design the site's default look gives it — Meadow's front —
 /// in Frost's own colours, with Frost's own bouquet inside it.
 [Test(Florist)]
 void a_look_that_skips_the_front_page_draws_the_default_looks_front_in_its_own_colours() {

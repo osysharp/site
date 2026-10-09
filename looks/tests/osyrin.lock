@@ -15,8 +15,8 @@
     {
       "name": "Osysharp.Pages",
       "kind": "package",
-      "version": "0.2.0",
-      "hash": "sha256:ef0aec82f2be46ed48f9ba0eb986b37199eaacdeb87c48b6abee67e61fcd126f",
+      "version": "0.2.1",
+      "hash": "sha256:ba75b53965091b063876510b493bb40ed60ad2e2ad4d9c3c56b17f6411559d41",
       "minPlatform": "0.9.0",
       "shadow": "app-forkable",
       "source": "workspace:kits/pages",
@@ -52,8 +52,8 @@
     {
       "name": "Osysharp.MarkdownEditor",
       "kind": "package",
-      "version": "1.0.2",
-      "hash": "sha256:c831a0f188e6fb940361f94eff8bfb45850969c79304392a73d3d68b5b843a52",
+      "version": "1.0.3",
+      "hash": "sha256:82c50f9a7a1062eb65daa988f361659810e828c8ab42e23d1fc415eddff0a8d3",
       "minPlatform": "0.9.0",
       "shadow": "app-forkable",
       "source": "workspace:kits/markdown",
@@ -63,8 +63,8 @@
     {
       "name": "Osysharp.Site.Looks",
       "kind": "package",
-      "version": "0.1.2",
-      "hash": "sha256:c7f1b799c03be497e1adc6ae3a74d24ff15440a20ba20dcb8b66ecf4fbd48ede",
+      "version": "0.1.3",
+      "hash": "sha256:f9772485d46e1162778cbcf97f876a2dec4ec48a583fd448d7aa6c4c853934e1",
       "minPlatform": "0.9.0",
       "shadow": "app-forkable",
       "source": "workspace:kits/site-looks",

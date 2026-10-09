@@ -1,4 +1,4 @@
-// The general site contract (D-SITEFRAME1 part 2). Each `abstract component` is a BLOCK TYPE: its parameters are the
+// The general site contract. Each `abstract component` is a BLOCK TYPE: its parameters are the
 // fields staff fill in at the page desk, and each look draws it in its own design —
 //
 //     component AtelierHero(string title, Markdown words = "", Picture photo = "", string button = "Shop now",
