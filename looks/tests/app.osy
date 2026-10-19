@@ -4,7 +4,7 @@ app SiteLooksKitTests {
   model "model/**/*.osy";
   tests "**/*.test.osy";
   use Osysharp.Site.Looks@0;
-  use Osysharp.Pages@0;
+  use Osysharp.PageBuilder@0;
   use Osysharp.Blocks;
   use Osysharp.Storage;
   use Osysharp.Ui;

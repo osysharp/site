@@ -2,7 +2,7 @@
 // which look it wears until staff choose another. What each look draws is in model/looks/.
 
 using Osysharp.Blocks;
-using Osysharp.Pages;
+using Osysharp.PageBuilder;
 using Osysharp.Site.Looks;
 
 app.Look = Meadow;
