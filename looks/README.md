@@ -62,3 +62,80 @@ complete designs of a shop](https://osyrin.com/templates/shop/#looks): five worn
 
 Its tests are a florist with two looks of its own: the look the app names, a switch redrawing the same arrangement,
 what a look leaves behind.
+
+## Examples
+
+Taken from this package's own tests, which compile and run on every release.
+
+```osy
+using Osysharp.Blocks;
+
+[Test(Florist)]
+void a_look_name_the_app_does_not_have_is_refused() {
+  runas (Anna) {
+    Assert.Equal("The app has no look called dusk.", SetLook(MainVersion().Id, "dusk"));
+    Assert.Equal("meadow", SiteLook().Look);
+  }
+}
+```
+
+From [`tests/looks.test.osy`](tests/looks.test.osy).
+
+```osy
+using Osysharp.Blocks;
+
+[Test(Florist)]
+void each_block_says_which_looks_draw_it() {
+  runas (Anna) {
+    var bouquet = BlockTypes().Single(b => b.Name == "Bouquet");
+    Assert.False(bouquet.EveryLook);
+    Assert.Equal(3, bouquet.Looks.Count);   // Meadow, Night and Frost
+    var quote = BlockTypes().Single(b => b.Name == "Saying");
+    Assert.Equal(1, quote.Looks.Count);
+    Assert.Equal("meadow", quote.Looks[0]);
+    var pressed = BlockTypes().Single(b => b.Name == "Florist.Looks.Meadow.Pressed");
+    Assert.Equal("meadow", pressed.Looks[0]);
+    // One region, "front", declared by each look that draws a front — Frost draws none — and the version's look
+    // decides what it allows and its default.
+    Assert.Equal(2, SiteRegions().Count(r => r.Name == "front"));
+    Assert.Contains("Florist.Looks.Meadow.Pressed", SiteRegions().Single(r => r.Name == "front" && r.Look == "meadow").Allow);
+    Assert.Equal("/", SiteRegions().Single(r => r.Name == "front" && r.Look == "night").Page);
+  }
+}
+```
+
+From [`tests/looks.test.osy`](tests/looks.test.osy).
+
+```osy
+using Osysharp.Blocks;
+
+[Test(Florist)]
+void the_general_contract_is_in_the_catalog_as_block_types() {
+  runas (Anna) {
+    var hero = BlockTypes().Single(b => b.Name == "Osysharp.Site.Looks.Hero");
+    Assert.Equal("Hero", hero.Label);
+    Assert.Equal(7, hero.Params.Count);
+    Assert.Equal(BlockParamKind.Picture, hero.Params.Single(p => p.Name == "photo").Kind);
+    // No look of this app draws it — a look kit would.
+    Assert.False(hero.EveryLook);
+    Assert.Equal(0, hero.Looks.Count);
+    foreach (var name in new List<string> { "PictureWithWords", "Quote", "SignUp", "Banner", "PhotoGallery", "Announcement",
+                                            "FooterWords", "FooterLink", "OpeningHours", "Address", "FooterSignUp" }) {
+      Assert.Equal(1, BlockTypes().Count(b => b.Name == "Osysharp.Site.Looks." + name));
+    }
+  }
+}
+```
+
+From [`tests/looks.test.osy`](tests/looks.test.osy).
+
+## Learn more
+
+- [The Osysharp.Site.Looks reference](https://osysharp.com/reference/ui/looks/)
+- [Osysharp.Site.Looks in the package catalogue](https://osysharp.com/packages/#osysharp-site-looks)
+- [The Osy# reference](https://osysharp.com/reference/) — the language, the runtime and every kit
+- [`llms-full.txt`](https://osysharp.com/llms-full.txt) — the whole reference and specification as one Markdown file, for a coding agent
+
+## Licence
+
+MIT — see [`LICENSE`](LICENSE).
